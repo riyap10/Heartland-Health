@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box; /* Added to prevent padding from affecting layout */
+}
+
+/* Navigation menu styles */
+nav ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin-right: 1vw; 
+}
+
+nav ul li:last-child {
+  margin-right: 1.5vw; 
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333; 
+  padding: 1vw; 
+  display: block;
+}
+
+/* Navbar container styles */
+.navbar {
+  display: flex;
+  align-items: center; 
+  background-color: #191b34; 
+  color: white; 
+  padding: .5vw; 
+  margin: 0;
+}
+
+/* Logo container styles */
+.logo-container {
+  flex: 0 0 auto; 
+  margin-right: auto; 
+}
+
+.logo {
+  height: 6vw; 
+  margin-left: 1vw; 
+}
+
+/* Navigation links container styles */
+.nav-links {
+  display: flex;
+  list-style-type: none; 
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  margin-left: 1vw; 
+}
+
+.nav-links li:first-child {
+  margin-left: 0; 
+}
+
+/* Navigation link styles */
+.nav-links a {
+  text-decoration: none; 
+  color: white; 
+  padding: 1vw; 
+  position: relative;
+  font-weight: 600;
+  transition: 0.3s ease;
+  padding-bottom: 0.2vw; 
+}
+
+/* Link hover effect */
+.nav-links a:before {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 0.3vw; 
+  bottom: 0; 
+  left: 50%; 
+  background: #fff; 
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-links a:hover:before {
+  width: calc(100% - 2vw); 
+  left: 1vw; 
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+/* Hamburger menu button styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* Media query for Tablet */
+@media (max-width: 1024px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: fixed; /* Changed to fixed */
+    top: 0;
+    right: 0;
+    background-color: #191b34;
+    width: 100%;
+    height: 100vh; /* Ensures it covers the full viewport height */
+    transform: translateX(100%); /* Starts off-screen */
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    overflow: hidden; /* Ensures no scrolling */
+  }
+
+  .nav-links.open {
+    transform: translateX(0); /* Slides the menu into view */
+  }
+
+  .nav-links li {
+    margin: 0;
+  }
+
+  .nav-links a {
+    padding: 10px; 
+    display: block;
+    text-align: center;
+  }
+}
+
+/* Media query for Mobile */
+@media (max-width: 768px) {
+  .hamburger .line {
+    width: 20px;
+    height: 2px;
+    margin-right: 2px;
+  }
+
+  .navbar {
+    padding: 2vw;
+  }
+
+  .nav-links a {
+    padding: 15px; 
+  }
+}
+
+/* Ensures body does not scroll when menu is open */
+body.menu-open {
+  overflow: hidden; /* Prevents scrolling */
+}

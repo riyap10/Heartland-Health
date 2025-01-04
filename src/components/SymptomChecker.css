@@ -1,0 +1,198 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.symptom-checker-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+}
+
+/* Top section split into two halves */
+.top-section {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Two halves fill up the space */
+.left-half, .right-half {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.left-half {
+  position: relative;
+  height: 100vh; 
+}
+
+/* Image with color overlay */
+.left-half::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1;
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+/* White text on top of image */
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 2; 
+}
+
+.overlay-text p {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.overlay-text .emphasis {
+  font-size: 3rem;
+  font-weight: bold;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+/* Text side */
+.right-half {
+  background-color: #F2F0EF;
+  flex-direction: column;
+  padding: 20px;
+  height: 100vh; 
+}
+
+.right-half p {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Start Listening button */
+.toggle-button {
+  padding: 15px 30px;
+  margin-top: 30px; 
+  background-color: #4b8df7;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.toggle-button:hover {
+  background-color: #2574f4;
+  transform: scale(1.1);
+}
+
+/* Recommendation box */
+.recommendation-box {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%; /* Adjust width as necessary */
+  text-align: center;
+}
+
+.recommendation-box h2 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+/* Text inside recommendation box */
+.specialist-text {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.confidence-text {
+  font-size: 1rem;
+  color: gray;
+}
+
+/* Code for image and text animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Media Queries for Tablet */
+@media (max-width: 768px) {
+  .top-section {
+    flex-direction: column;
+  }
+
+  .left-half, .right-half {
+    height: 50vh; 
+  }
+
+  .background-image {
+    height: auto; 
+  }
+
+  .overlay-text p {
+    font-size: 1.5rem; 
+  }
+
+  .overlay-text .emphasis {
+    font-size: 2.5rem; 
+  }
+
+  .toggle-button {
+    margin-top: 20px; 
+  }
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 480px) {
+  .top-section {
+    flex-direction: column;
+  }
+
+  .left-half, .right-half {
+    height: 50vh; 
+  }
+
+  .background-image {
+    height: 100%; 
+  }
+
+  .overlay-text p {
+    font-size: 1rem; 
+  }
+
+  .overlay-text .emphasis {
+    font-size: 2rem; 
+  }
+
+  .toggle-button {
+    margin-top: 30px; 
+  }
+}

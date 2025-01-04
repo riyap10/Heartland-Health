@@ -1,0 +1,354 @@
+/* Main container for the Facility Finder page */
+.facility-finder-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  position: relative; 
+}
+/* Main heading for the Facility Finder page */
+.heading {
+  font-size: 2em;
+  text-align: center;
+}
+
+/* Search bar section, including input and button */
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 650px; 
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Search bar input field (the gray words) */
+.search-bar input {
+  flex-grow: 1;
+  padding: 10px 20px;
+  margin-right: 125px;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  box-sizing: border-box;
+}
+
+/* Search bar button (the magnifying glass) */
+.search-bar button {
+  position: absolute;
+  margin-right: -245px;
+  top: -50%; 
+  border: none;
+  background: #4b8df7;
+  color: #fff;
+  border-radius: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+/* Size of the search button icon itself */
+.search-bar button img {
+  width: 11px;
+  height: 11px;
+}
+
+/* Container for the map and filters and search bar*/
+.content-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center; 
+}
+
+/* Alignment for filters*/
+.filters {
+  display: flex;
+  align-items: center; 
+  gap: 10px; 
+  margin-bottom: 20px; 
+  width: 100%;
+  max-width: 1000px; 
+}
+
+/* Individual filter element */
+.filters div {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  flex: 1; 
+}
+
+/*Filter labels */
+.filters label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+/* Filter dropdowns */
+.filters select {
+  width: 100%;
+  padding: 7px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  font-size: .85rem;
+  background-color: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.filters select:focus {
+  border-color: #4b8df7;
+  box-shadow: 0 0 5px rgba(75, 141, 247, 0.5);
+  outline: none;
+}
+
+/* Style for the filter button */
+.filters button {
+  padding: 10px;
+  margin-top: 25px;
+  background-color: #4b8df7;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: .75rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover state for the filter button */
+.filters button:hover {
+  background-color: #2574f4;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(37, 116, 244, 0.2);
+}
+
+/* Style for options in filter dropdowns */
+.filters select option {
+  padding: 10px;
+}
+
+/* Map sizing*/
+.map-container {
+  width: 80vw; 
+  height: 75vh;
+  margin-top: 20px; 
+}
+
+/* Help section button and content */
+.help-section {
+  position: fixed;
+  top: 150px; 
+  left: 0;
+  height: 50px;
+  width: 50px;
+  background-color: #4b8df7;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.5s ease, height 0.5s ease;
+  z-index: 1000;
+}
+
+/* Expanded state for the help section */
+.help-section.visible {
+  width: 300px;
+  height: calc(100% - 200px); 
+}
+
+/* Content inside the help section */
+.help-content {
+  display: none;
+  padding: 20px;
+  overflow-y: auto;
+  height: 100%; 
+}
+
+/* Display help content when expanded */
+.help-section.visible .help-content {
+  display: block;
+}
+
+/* Toggle button for the help section */
+.toggle-help {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 10px; 
+  top: 10px;
+}
+
+/* Paragraphs within the help content */
+.help-content p {
+  margin: 0 0 10px 0;
+  line-height: 1.5;
+}
+
+/* Media Queries for Tablets (landscape) */
+@media (max-width: 1024px) and (orientation: landscape){
+  
+  .search-bar {
+    max-width: 100%;
+    margin-top: 40px;
+    margin-bottom: -10px;
+  }
+  
+  .search-bar input {
+    flex-grow: 1;
+    padding: 10px 20px;
+    margin-right: 775px;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    box-sizing: border-box;
+  }
+
+  .search-bar button {
+    position: absolute;
+    margin-right: -941px;
+    top: -57%;
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .map-container {
+    width: 90vw; 
+  }
+
+  .help-section.visible {
+    width: 250px;
+  }
+}
+
+/* Media Queries for Tablet (portrait) with extra code for search bar*/
+@media (max-width: 1024px) and (orientation: portrait) {
+  .search-bar {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    max-width: 100%;
+    position: relative; 
+  }
+
+  .search-bar input {
+    flex-grow: 1;
+    padding: 10px 20px;
+    margin-left: 125px;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    box-sizing: border-box;
+  }
+
+  .search-bar button {
+    margin-right: -160px; 
+    position: absolute; 
+    bottom: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .search-bar button img {
+    width: 11px;
+    height: 11px;
+  }
+}
+
+/* Media Queries for Mobile (portrait) with extra code for search bar*/
+@media (max-width: 767px) and (orientation: portrait) {
+  .facility-finder-container {
+    padding: 20px;
+  }
+
+  .search-bar {
+    margin-top: 30px;
+    max-width: 100%;
+  }
+
+  .search-bar input {
+    flex-grow: 1;
+    padding: 10px 20px;
+    margin-left: -6%;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    box-sizing: border-box;
+  }
+
+  .search-bar button {
+    position: absolute;
+    margin-right: -88%;
+    top: -55%;
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filters div {
+    margin-bottom: 10px; 
+  }
+
+  .map-container {
+    width: 90vw; 
+    height: 60vh; 
+    margin-bottom: 60px; 
+  }
+
+  .help-section.visible {
+    width: 200px;
+  }
+}
+
+/* Media Queries for Mobile (landscape) */
+@media (max-width: 768px) and (orientation: landscape) {
+  .search-bar {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    max-width: 100%;
+    position: relative; 
+  }
+
+  .search-bar input {
+    flex-grow: 1;
+    padding: 10px 20px;
+    margin-right: 480px; 
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    box-sizing: border-box;
+  }
+
+  .search-bar button {
+    margin-left: 340px;    
+  }
+
+  .search-bar button img {
+    width: 11px;
+    height: 11px;
+  }
+}

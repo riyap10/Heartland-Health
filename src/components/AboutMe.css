@@ -1,0 +1,141 @@
+/* Holds the entire About Me page */
+.about-me-container {
+  padding: 2.5rem;
+  background-color: #F2F0EF;
+  min-height: 100vh;
+  text-align: center; 
+}
+
+/* Main heading with larger font */
+.main-heading {
+  font-size: 2.5rem;
+  margin-bottom: 1.875rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Flex container to align profile picture and basic info side by side */
+.about-me-content-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  justify-content: center; 
+  flex-wrap: wrap; /* Keep for responsiveness */
+}
+
+/* Container for profile picture with centered alignment */
+.profile-picture {
+  flex: 0 0 150px; 
+  text-align: center;
+  margin: 1.25rem auto 1.25rem; /* Vertical centering */
+}
+
+/* Circular profile picture image */
+.profile-picture img {
+  width: 12.5rem; /* 200px */
+  height: 12.5rem; /* 200px */
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Basic personal information */
+.basic-info {
+  margin-top: 0.625rem; /* Vertical spacing */
+  font-family: 'Poppins', sans-serif;
+}
+
+.basic-info p {
+  margin: 0.3125rem 0; /* Vertical spacing between lines */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Content sections below the profile info */
+.about-me-content-container {
+  flex: 1;
+  max-width: 800px;
+  margin: 0 auto; /* Center align */
+}
+
+/* Individual content sections with a white background and shadow */
+.about-me-content {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 0.625rem; 
+  padding: 1.25rem; 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+  margin-bottom: 1.25rem; 
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: slideIn 0.5s forwards;
+}
+
+/* Animation delays for content sections */
+.slide-in:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+.slide-in:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.slide-in:nth-child(3) {
+  animation-delay: 1.5s;
+}
+
+/* Slide-in effect */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Styles for tablet-sized screens */
+@media (max-width: 1024px) {
+  .main-heading {
+    font-size: 2rem;
+  }
+
+  /* Profile picture size and margins on tablets */
+  .profile-picture {
+    flex: 0 0 auto;
+    margin: 0 auto 1.25rem;
+  }
+
+  .profile-picture img {
+    width: 10rem; /* 160px */
+    height: 10rem; /* 160px */
+  }
+
+  /* Stack content sections vertically on tablets */
+  .about-me-content-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-me-content {
+    padding: 1rem;
+  }
+}
+
+/* Styles for mobile devices */
+@media (max-width: 768px) {
+  .about-me-container {
+    padding: 1.25rem;
+  }
+  
+  .main-heading {
+    font-size: 1.5rem;
+  }
+  
+  .profile-picture img {
+    width: 8rem; /* 128px */
+    height: 8rem; /* 128px */
+  }
+
+  .about-me-content {
+    padding: 0.75rem;
+  }
+}

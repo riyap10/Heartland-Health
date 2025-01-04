@@ -1,0 +1,104 @@
+.resources-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem; /* 40px */
+  min-height: 100vh;
+  background-color: #F2F0EF;
+}
+
+.resources-container h2 {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 1.25rem; /* 20px */
+}
+
+.resources-container p {
+  font-size: 1em;
+  margin-bottom: 1.25rem; /* 20px */
+  text-align: center;
+}
+
+/* Big box containing the individual resources */
+.resources-box {
+  width: 80%;
+  max-width: 50rem; /* 800px */
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem; /* 8px */
+  padding: 1.25rem; /* 20px */
+}
+
+.resource-section {
+  margin-bottom: 1.25rem; /* 20px */
+}
+
+/* Header for each resource section */
+.resource-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.625rem 0; /* 10px 0 */
+  border-bottom: 1px solid #ddd;
+}
+
+.resource-header h3 {
+  margin: 0;
+}
+
+/* Arrow icon within the resource header */
+.arrow {
+  font-size: 1.2em;
+}
+
+.resource-content {
+  padding: 0.625rem 0; /* 10px 0 */
+}
+
+.resource-content p {
+  margin: 0.625rem 0; /* 10px 0 */
+}
+
+.resource-content ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.resource-content li {
+  margin-bottom: 0.3125rem; /* 5px */
+}
+
+.resource-content a {
+  color: #4b8df7;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.resource-content a:hover {
+  text-decoration: underline;
+}
+
+/* Media Queries for Tablets and Smaller Devices */
+@media (max-width: 1024px) {
+  .resources-container {
+    padding: 1.875rem; /* 30px */
+  }
+
+  .resources-container h2 {
+    font-size: 1.75em;
+    margin-bottom: 1rem; /* 16px */
+  }
+
+  .resources-box {
+    padding: 1rem; /* 16px */
+  }
+
+  .resource-header {
+    padding: 0.5rem 0; /* 8px 0 */
+  }
+
+  .resource-content {
+    padding: 0.5rem 0; /* 8px 0 */
+  }
+}
