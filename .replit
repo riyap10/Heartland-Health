@@ -17,3 +17,6 @@ run = ["sh", "-c", "npm run launch"]
 [[ports]]
 localPort = 5173
 externalPort = 80
+
+[agent]
+expertMode = true
